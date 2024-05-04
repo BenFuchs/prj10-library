@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- shows all the currently taken books -->
+    <a href="borrow_form.html">Borrow a book!</a>
+    <a href="index.html">Home Page</a>
+    <a href="users.html">Customers of the library</a>
+
+    <div id="display">
+        <h3>List of current borrowed books:</h3>
+        <ol>
+
+        </ol>
+    </div>
+
+    <script src="library.js"></script>
+    <script>
+        // Check if 'borrowedBooks' exists in localStorage
+        if (localStorage.getItem("Borrowed Books")) {
+            
+            let borrowedBooks = JSON.parse(localStorage.getItem("Borrowed Books"));
+            let display = document.getElementById("display");
+           
+            borrowedBooks.forEach(book => {
+                let listItem = document.createElement("li");
+                listItem.textContent = `${book["Customer Name"]} borrowed ${book["Book"]}`;
+                display.appendChild(listItem);
+            });
+        } else {
+            console.log("No borrowed books found in localStorage.");
+        }
+
+    </script>
+
+</body>
+
+</html>

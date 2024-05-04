@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Form to borrow books, should add you to the dB of current taken -->
+    <div>
+        <a href="current_taken.html">What books are currently taken?</a>
+        <a href="index.html">Home Page</a>
+        <a href="users.html">Customers of the library</a>
+    </div>
+    <div>
+        Customer Name: <input id="name"> <br>
+        Which book would you like to borrow? <br>
+        <ul id="bookList">
+            <li><button onclick="borrow('Echoes of Eternity')">Borrow</button> Echoes of Eternity</li>
+            <li><button onclick="borrow('Whispers in the Mist')">Borrow</button> Whispers in the Mist</li>
+            <li><button onclick="borrow('Serpents and Stars')">Borrow</button> Serpents and Stars</li>
+            <li><button onclick="borrow('The Forgotten Symphony')">Borrow</button> The Forgotten Symphony</li>
+            <li><button onclick="borrow('Chronicles of the Celestial Gate')">Borrow</button> Chronicles of the Celestial
+                Gate</li>
+            <li><button onclick="borrow('Shadows of the Lost Kingdom')">Borrow</button> Shadows of the Lost Kingdom</li>
+            <li><button onclick="borrow('The Alchemy of Dreams')">Borrow</button> The Alchemy of Dreams</li>
+            <li><button onclick="borrow('Beyond the Veil of Time')">Borrow</button> Beyond the Veil of Time</li>
+            <li><button onclick="borrow('In the Realm of Emeralds')">Borrow</button> In the Realm of Emeralds</li>
+            <li><button onclick="borrow('The Oracle\'s Labyrinth')">Borrow</button> The Oracle's Labyrinth</li>
+        </ul>
+    </div>
+
+
+
+    <script src="library.js"></script>
+    <script>
+        // function for borrowing the books
+        function borrow(bookTitle) {
+            let customerName = document.getElementById("name").value;
+            addBorrowedBook(customerName, bookTitle);
+
+            console.log(borrowedBooks);
+
+            document.getElementById("name").value = '';
+        
+        }
+
+        // add a function that removes the ability to borrow a book if it appears on the
+    </script>
+</body>
+
+</html>
